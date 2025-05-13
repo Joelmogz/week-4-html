@@ -1,1 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive HTML Project with Flexbox</title>
+  <style>
+    /* Base styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    nav a:hover {
+      background-color: #666;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    section {
+      flex: 1 1 300px;
+      max-width: 800px;
+    }
+
+    img, video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid #000;
+      padding: 8px;
+      text-align: left;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, select, label {
+      font-size: 1rem;
+    }
+
+    footer {
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 20px;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      main {
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      section {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>My Responsive HTML5 Project</h1>
+    <p>Flexbox Layout + Media Queries</p>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#goals">Goals</a>
+    <a href="#image">Image</a>
+    <a href="#contacts">Contacts</a>
+    <a href="#form">Register</a>
+    <a href="#media">Media</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Ordered List -->
+    <section id="goals">
+      <h2>My Goals (Ordered List)</h2>
+      <ol type="I">
+        <li>Learn HTML and CSS</li>
+        <li>Understand JavaScript</li>
+        <li>Build Responsive Websites</li>
+        <li>Create Full-Stack Applications</li>
+        <li>Deploy Projects Online</li>
+      </ol>
+    </section>
+
+    <!-- Image Section -->
+    <section id="image">
+      <h2>Inspiring Image</h2>
+      <img src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg"
+           alt="Sunset from Pexels" />
+    </section>
+
+    <!-- Contact Table -->
+    <section id="contacts">
+      <h2>Contact List</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Mobile</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jane Doe</td>
+            <td>123 Hill St.</td>
+            <td>+254700123456</td>
+            <td>jane@example.com</td>
+          </tr>
+          <tr>
+            <td>John Smith</td>
+            <td>456 Oak Ave.</td>
+            <td>+254712345678</td>
+            <td>john@example.com</td>
+          </tr>
+          <tr>
+            <td>Alice Brown</td>
+            <td>789 Maple Rd.</td>
+            <td>+254723456789</td>
+            <td>alice@example.com</td>
+          </tr>
+          <tr>
+            <td>Michael Green</td>
+            <td>321 Elm St.</td>
+            <td>+254734567890</td>
+            <td>michael@example.com</td>
+          </tr>
+          <tr>
+            <td>Linda Black</td>
+            <td>654 Pine Ln.</td>
+            <td>+254745678901</td>
+            <td>linda@example.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Registration Form -->
+    <section id="form">
+      <h2>Register Here</h2>
+      <form action="#" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required minlength="6" />
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required />
+
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+          <option value="">--Select--</option>
+          <option value="kenya">Kenya</option>
+          <option value="usa">USA</option>
+          <option value="india">India</option>
+          <option value="uk">UK</option>
+        </select>
+
+        <label>Gender:</label>
+        <label><input type="radio" name="gender" value="Male" required /> Male</label>
+        <label><input type="radio" name="gender" value="Female" required /> Female</label>
+        <label><input type="radio" name="gender" value="Other" required /> Other</label>
+
+        <label>Skills:</label>
+        <label><input type="checkbox" name="skills" value="HTML" /> HTML</label>
+        <label><input type="checkbox" name="skills" value="CSS" /> CSS</label>
+        <label><input type="checkbox" name="skills" value="JavaScript" /> JavaScript</label>
+
+        <input type="submit" value="Register" />
+      </form>
+    </section>
+
+    <!-- Multimedia Section -->
+    <section id="media">
+      <h2>Media</h2>
+      <h3>Listen to Music</h3>
+      <audio controls>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <h3>Watch a Video</h3>
+      <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 PLP Web Technologies</p>
+  </footer>
+
+</body>
+</html>
 
